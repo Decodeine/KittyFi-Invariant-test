@@ -14,7 +14,7 @@
 			"lcov"
 		],
 		"revertReporterEnabled": false,
-		"targetContracts": ["StatelessAaveInvariant"],
+		"targetContracts": ["invcheats","KittyCoinInvariant","KittyPoolInvariant"],
 		"predeployedContracts": {},
 		"targetContractsBalances": [],
 		"constructorArgs": {},
