@@ -1,0 +1,27 @@
+[
+ {
+  "call": {
+   "from": "0x0000000000000000000000000000000000010000",
+   "to": "0xa647ff3c36cfab592509e13860ab8c4f28781a66",
+   "nonce": 0,
+   "value": "0x0",
+   "gasLimit": 12500000,
+   "gasPrice": "0x1",
+   "gasFeeCap": "0x0",
+   "gasTipCap": "0x0",
+   "data": "0xe2bbb1580000000000000000020000004ddb31590440d9f49276d3013c5dcd3d3f0bf77d0000000000000000000000000000000000000000000000000053444854885f6b",
+   "dataAbiValues": {
+    "methodSignature": "deposit(uint256,uint256)",
+    "inputValues": [
+     "49039857752188894812175906560337227054946774321157896061",
+     "23437500513541995"
+    ]
+   },
+   "AccessList": null,
+   "SkipNonceChecks": true,
+   "SkipFromEOACheck": true
+  },
+  "blockNumberDelay": 64,
+  "blockTimestampDelay": 284585
+ }
+]

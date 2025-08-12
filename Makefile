@@ -12,7 +12,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install foundry-rs/forge-std --no-commit && forge install OpenZeppelin/openzeppelin-contracts@v5.0.2 --no-commit && forge install smartcontractkit/chainlink-brownie-contracts --no-commit
+install :; forge install foundry-rs/forge-std && forge install OpenZeppelin/openzeppelin-contracts@v5.0.2 && forge install smartcontractkit/chainlink-brownie-contracts
 
 # Update Dependencies
 update:; forge update
@@ -22,6 +22,14 @@ build:; forge build --via-ir
 compile:; forge compile --via-ir
 
 test :; @forge test --via-ir --fork-url $(SEPOLIA_RPC_URL) 
+
+test-invariant :; @forge test --match-test invariant --via-ir --fork-url $(SEPOLIA_RPC_URL)
+
+test-invariant-mainnet :; @forge test --match-test invariant --via-ir --fork-url $(MAINNET_RPC_URL)
+
+test-invariant-local :; @forge test --match-test invariant --via-ir
+
+test-invariant-verbose :; @forge test --match-test invariant --via-ir --fork-url $(SEPOLIA_RPC_URL) -vvv
 
 format :; forge fmt
 

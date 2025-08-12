@@ -118,3 +118,23 @@ src/KittyVault.sol
 - The `vaults` array used in KittyPool will not have a length more than 20, that means that are at most 20 collateral tokens that will be used in protocol.
 
 [//]: # (known-issues-close)
+Access Control: Only the designated pool address can mint or burn tokens
+Total Supply Consistency: Total supply should equal sum of all user balances
+Pool Immutability: The pool address cannot be changed after deployment
+Mint/Burn Authorization: mint() and burn() functions can only be called by the pool
+Balance Non-Negativity: No user balance can be negative
+Supply Conservation: Minting increases total supply, burning decreases it by exact amounts
+Zero Address Protection: Cannot mint to or burn from zero address
+Collateralization Ratio: Users must maintain ≥169% collateralization (debt ≤ collateral value / 1.69)
+Vault Mapping Consistency: tokenToVault[token] always points to valid vault or zero address
+Debt Tracking: kittyCoinMeownted[user] equals actual KittyCoin balance minted by user
+Vault Limit: Maximum 20 vaults can exist in the protocol
+Access Control: Only meowntainer can create vaults and manage Aave operations
+Token Uniqueness: Each collateral token can only have one vault
+Total Collateral ≥ Total Debt: Sum of all user collateral values ≥ sum of all user debts
+Share Proportionality: userToCattyNip[user] / totalCattyNip = user collateral / total collateral
+Total Collateral Consistency: getTotalMeowllateral() = totalMeowllateralInVault + getTotalMeowllateralInAave()
+Share Conservation: Sum of all user shares equals totalCattyNip
+Access Control: Only pool can execute deposits/withdrawals, only meowntainer can manage Aave
+Collateral Backing: Total shares are always backed by actual collateral
+Non-Zero Shares: When total collateral > 0, total shares > 0
